@@ -1,18 +1,18 @@
 {
   "author": "Arian Stolwijk (http://github.com/arian)",
-  "name": "coverjs",
-  "description": "JSCoverage compatible JavaScript code coverage tool",
-  "version": "0.0.7-alpha",
+  "name": "coverjs-moz",
+  "description": "JSCoverage compatible JavaScript code coverage tool (with moz enhancements)",
+  "version": "0.0.7-alpha-moz",
   "repository": {
-    "url": "git://github.com/arian/classy.git"
+    "url": "git://github.com/gregglind/classy.git#moz"
   },
   "main": "cover.js",
   "bin": {
-    "coverjs": "./bin/coverjs"
+    "coverjs-moz": "./bin/coverjs"
   },
   "dependencies": {
-    "esprima": "0.9",
-    "escodegen": "0.x",
+    "esprima": "git://github.com/gregglind/esprima.git#moz",
+    "escodegen": "git://github.com/Constellation/escodegen.git",
     "prime": "0.0.5-alpha",
     "Supersonic": "0.x",
     "mkdirp": "0.3.3",
