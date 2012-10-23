@@ -14,6 +14,7 @@ var files = [];
 var dir;
 var recursive = false;
 var excludes = [];
+var escodegenOptions = {};
 
 var args = process.argv.slice(2);
 if (!args.length) args.push('--help');
@@ -42,6 +43,10 @@ for (var i = 0; i < args.length; i++){
 		continue;
 	}
 
+	if (arg == '--escodegen-options') {
+		escodegenOptions = JSON.parse(args[++i]);
+        continue;
+	}
 	if (arg == '--help' || arg == '-h'){
 
 		var help = '\n\n' +
@@ -51,7 +56,8 @@ for (var i = 0; i < args.length; i++){
 			'    -v, --version                output version information\n' +
 			'    -o, --output <directory>     directory to output the instrumented files\n' +
 			'    -r, --recursive              recurse in subdirectories\n' +
-			'    -x, --exclude <directories>  exclude these directories' +
+			'    -x, --exclude <directories>  exclude these directories\n' +
+			'    --escodegen-options <json>   options for escodegen generation' +
 			'\n\n';
 
 		console.log(help);
@@ -157,7 +163,7 @@ var processFile = function(file, outFile){
 
 			console.warn(('instrumenting ' + file).blue);
 			var instrument = new Instrument(code, file);
-			instrumented   = instrument.instrument();
+			instrumented   = instrument.instrument(escodegenOptions);
 
 			next();
 
