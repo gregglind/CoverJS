@@ -4,7 +4,7 @@
   "description": "JSCoverage compatible JavaScript code coverage tool (with moz enhancements)",
   "version": "0.0.7-alpha-moz",
   "repository": {
-    "url": "git://github.com/gregglind/classy.git#moz"
+    "url": "git://github.com/gregglind/CoverJs.git#moz"
   },
   "main": "cover.js",
   "bin": {
